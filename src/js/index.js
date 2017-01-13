@@ -1,89 +1,88 @@
 (function() {
     "use strict";
 
-    /**
-     * makeRequest()
-     * Makes an asynchronous request.
-     * @param method: The method.
-     * @param url: The url.
-     * @return : A promise.
-     */
-    function makeRequest(method, url) {
-        return new Promise(function(resolve, reject) {
-            var request = new XMLHttpRequest();
+    var listView = {
+        startIndex: 0,
+        numItemsToDisp: 18,
 
-            request.onload = function() {
-                resolve(request);
-            };
+        /**
+         * makeRequest()
+         * Makes an asynchronous request.
+         * @param method: The method.
+         * @param url: The url.
+         * @return : A promise.
+         */
+        makeRequest: function(method, url) {
+            return new Promise(function(resolve, reject) {
+                var request = new XMLHttpRequest();
 
-            request.onerror = function() {
-                reject(request);
-            };
+                request.onload = function() {
+                    resolve(request);
+                };
 
-            request.open(method, url);
-            request.send();
-        });
-    }
+                request.onerror = function() {
+                    reject(request);
+                };
 
-    /**
-     * createFragment()
-     * Create a fragment which acts like a psuedo-DOM node to hold the child items of the list.
-     * @param numItems: Number of items to add to the fragment.
-     * @param startIndex: Which index to start at for the data.
-     * @param data: The data received from the fetch request.
-     * @return fragment: The fragment DOM node.
-     */
-    function createFragment(numItems, startIndex, data) {
-        var fragment = document.createDocumentFragment();
+                request.open(method, url);
+                request.send();
+            });
+        },
 
-        for (var index = startIndex; index < numItems; index++) {
-            var ele = document.createElement("li");
-            ele.className = "listview__list-item";
-            ele.innerHTML = 
-                    "<img class=\"listview__list-item-image\" src=\"" + data[index].thumbnailUrl + "\">"
-                +   "<span class=\"listview__list-item-title\">" + index + " - " + data[index].title + "</span>"
-                +   "</li>";
 
-            fragment.appendChild(ele);
-        }
+        /**
+         * createFragment()
+         * Create a fragment which acts like a psuedo-DOM node to hold the child items of the list.
+         * @param data: The data received from the fetch request.
+         * @return fragment: The fragment DOM node.
+         */
+        createFragment: function() {
+            var fragment = document.createDocumentFragment();
 
-        return fragment;
-    }
+            for (var index = this.startIndex; index < (this.numItemsToDisp + this.startIndex); index++) {
+                var ele = document.createElement("li");
+                ele.className = "listview__list-item";
+                ele.innerHTML = 
+                        "<img class=\"listview__list-item-image\" src=\"" + this.data[index].thumbnailUrl + "\">"
+                    +   "<span class=\"listview__list-item-title\">" + index + " - " + this.data[index].title + "</span>"
+                    +   "</li>";
 
-    /**
-     * bindClickEvent()
-     * Bind the click event to the "Show more" button.
-     * @param data: The data received from the fetch request. 
-     */
-    function bindClickEvent(data) {
-        var startIndex = 0;
-        var numItemsToDisp = 18;
+                fragment.appendChild(ele);
+            }
 
-        document.querySelector(".listview__btn").addEventListener("click", function(evt) {
-            var fragment = createFragment(numItemsToDisp + startIndex, startIndex, data);
+            return fragment;
+        },
 
-            // Update the start index
-            startIndex = startIndex + numItemsToDisp;
+
+        /**
+         * showMoreItems()
+         * Show more items on the page.
+         */
+        showMoreItems: function(data) {
+            var fragment = this.createFragment(this.numItemsToDisp + this.startIndex, this.startIndex);
+
+            // Update the start index count
+            this.startIndex = this.startIndex + this.numItemsToDisp;
 
             // Append the fragment to the DOM
             document.querySelector(".listview__list").appendChild(fragment);
-        });
-    }
+        }
+    };
 
-    /**
-     * init()
-     * The initial function to execute.
-     */
-    function init() {
-        makeRequest("GET", "http://jsonplaceholder.typicode.com/photos")
-            .then(function(response) {
-                var data = JSON.parse(response.response);
+    listView.makeRequest("GET", "http://jsonplaceholder.typicode.com/photos")
+        .then(function(response) {
+            // Add the data to the ListView object
+            listView.data = JSON.parse(response.response);
 
-                bindClickEvent(data);
-            }, function(response) {
-                console.log("failure");
+            // Show the first initial set after fetch
+            listView.showMoreItems();
+
+            // Allow the "Show more" button to display more items on click
+            document.querySelector(".listview__btn").addEventListener("click", function(evt) {
+                listView.showMoreItems();
             });
-    }
 
-    init();
+        }, function(response) {
+            console.log("failure");
+        });
 })();
