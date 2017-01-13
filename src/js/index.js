@@ -23,7 +23,7 @@ makeRequest("GET", "http://jsonplaceholder.typicode.com/photos")
     .then(function(response) {
         var data = JSON.parse(response.response);
 
-        var ulTag = "<ul>";
+        var ulTag = "<ul class=\"listview__list\">";
         var liTags = "";
 
         for (var index = 0; index < 20; index++) {
