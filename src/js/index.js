@@ -28,7 +28,7 @@ makeRequest("GET", "http://jsonplaceholder.typicode.com/photos")
 
         for (var index = 0; index < 20; index++) {
             liTags = liTags
-                    +   "<li class=\"listview__list-item\">" 
+                    +   "<li class=\"listview__list-item clearfix\">" 
                     +   "<img class=\"listview__list-item-image\" src=\"" + data[index].thumbnailUrl + "\">"
                     +   "<span class=\"listview__list-item-title\">" + index + " - " + data[index].title + "</span>"
                     +   "</li>";
