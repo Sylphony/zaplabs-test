@@ -34,7 +34,6 @@ html {
 
 /* ListView container */
 .listview {
-    max-width:600px;
     margin:0 auto;
 }
 
@@ -82,11 +81,24 @@ html {
     overflow:hidden;
 }
 
-
 /* Responsive styles */
-@media (min-width:768px) {
+@media (min-width:640px) {
     .listview__list-item-image {
         width:150px;
         height:150px;
+    }
+}
+
+@media (min-width:1024px) {
+    .listview__list-item {
+        float:left;
+
+        width:50%;
+    }
+}
+
+@media (min-width:1200px) {
+    .listview__list-item {
+        width:calc(100% / 3);
     }
 }
