@@ -1,0 +1,55 @@
+/* Normalize */
+body {
+    margin: 0;
+}
+
+main,
+section {
+    display: block;
+}
+
+/* Make all elements use border-box box-sizing */
+* {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+/* ListView container */
+.listview {
+    max-width:600px;
+    margin:0 auto;
+}
+
+/* ListView list and its descendants */
+.listview__list {
+    padding:0;
+    margin:0;
+    width:100%;
+
+    list-style:none;
+}
+
+.listview__list-item {
+
+}
+
+.listview__list-item-image,
+.listview__list-item-title {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.listview__list-item-image {
+    width:150px;
+}
+
+.listview__list-item-title {
+    margin-left:10px;
+    width:calc(100% - 150px - 10px);    /* Full width - image width - margin-left amount */
+
+    white-space:nowrap;
+    text-overflow:ellipsis;
+
+    overflow:hidden;
+}

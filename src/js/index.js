@@ -30,7 +30,7 @@ makeRequest("GET", "http://jsonplaceholder.typicode.com/photos")
             liTags = liTags
                     +   "<li class=\"listview__list-item\">" 
                     +   "<img class=\"listview__list-item-image\" src=\"" + data[index].thumbnailUrl + "\">"
-                    +   "<span class=\"listview__list-item-text\">" + index + " - " + data[index].title + "</span>"
+                    +   "<span class=\"listview__list-item-title\">" + index + " - " + data[index].title + "</span>"
                     +   "</li>";
         }
 
