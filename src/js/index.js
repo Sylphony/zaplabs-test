@@ -38,7 +38,7 @@
 
         for (var index = startIndex; index < numItems; index++) {
             var ele = document.createElement("li");
-            ele.className = "listview__list-item clearfix";
+            ele.className = "listview__list-item";
             ele.innerHTML = 
                     "<img class=\"listview__list-item-image\" src=\"" + data[index].thumbnailUrl + "\">"
                 +   "<span class=\"listview__list-item-title\">" + index + " - " + data[index].title + "</span>"
@@ -60,13 +60,10 @@
         var numItemsToDisp = 18;
 
         document.querySelector(".listview__btn").addEventListener("click", function(evt) {
-            console.log(data);
             var fragment = createFragment(numItemsToDisp + startIndex, startIndex, data);
 
             // Update the start index
             startIndex = startIndex + numItemsToDisp;
-
-            console.log(startIndex);
 
             // Append the fragment to the DOM
             document.querySelector(".listview__list").appendChild(fragment);

@@ -55,10 +55,6 @@ html {
     border-bottom:1px solid #DDD;
 }
 
-/*.listview__list-item:nth-of-type(2n) {
-    background-color:#FDFDFD;
-}*/
-
 .listview__list-item-image,
 .listview__list-item-title {
     display:inline-block;
@@ -80,6 +76,29 @@ html {
 
     overflow:hidden;
 }
+
+/* ListView's "Show more" button */
+.listview__btn {
+    display:block;
+
+    width:100%;
+    max-width:300px;
+    margin:20px auto;
+    padding:20px;
+
+    border:0;
+    
+    color:#FFF;
+    
+    background-color:#0A0;
+
+    cursor:pointer;
+}
+
+.listview__btn:hover {
+    background-color:#080;
+}
+
 
 /* Responsive styles */
 @media (min-width:640px) {
