@@ -129,7 +129,7 @@
 }
 
 .header__nav-sublink::after {
-    content:"➡";
+    content:"￫";
 
     display:none;
 }
