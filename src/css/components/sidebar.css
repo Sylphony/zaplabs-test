@@ -1,7 +1,14 @@
 .sidebar {
+    display:none;
     float:right;
     
     padding-left:30px;
+}
+
+@media (min-width:992px) {
+    .sidebar {
+        display:block;
+    }
 }
 
 .sidebar__item {
