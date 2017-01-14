@@ -1,0 +1,15 @@
+background-bg-color: #f6f6f6
+
+primary-text-color: #000
+secondary-text-color: #5e789b
+
+image-caption-color: #577897
+
+dropdown-color: #5079a5
+dropdown-hover-color: #486a85
+
+search-field-bg-color: #fafafa
+search-btn-bg-color: #5a7799
+
+border-color-1: #f2f2f2
+border-color-2: #dfdfdf
