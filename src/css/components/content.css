@@ -1,6 +1,13 @@
+.content {
+    margin-right:300px;
+    padding-right:20px;
+
+    border-right:1px solid #dfdfdf;
+}
+
 .content__box {
-    padding-top:25px;
-    padding-bottom:25px;
+    padding-bottom:20px;
+    margin-bottom:20px;
 
     border-bottom:1px solid #dfdfdf;
 }
@@ -38,9 +45,12 @@
     background-color:#577897;
 }
 
-
 .content__box-info {
     margin-left:160px;
+}
+
+.content__box-info-details {
+    font-size:0.9rem;
 }
 
 .content__box-info-title,

@@ -9,7 +9,9 @@ body {
 main,
 section,
 nav,
-header {
+header,
+figure,
+figcaption {
     display:block;
 }
 

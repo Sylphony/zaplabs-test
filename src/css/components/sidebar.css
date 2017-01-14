@@ -1,0 +1,11 @@
+.sidebar {
+    float:right;
+    
+    padding-left:30px;
+}
+
+.sidebar__item {
+    display:block;
+
+    margin-bottom:10px;
+}
