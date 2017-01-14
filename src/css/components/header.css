@@ -51,6 +51,12 @@
     float:right;
 }
 
+@media (max-width:991px) {
+    .header__search {
+        margin-top:7px;
+    }
+}
+
 @media (min-width:992px) and (max-width:1199px) {
     .header__search {
         float:none;
@@ -69,7 +75,7 @@
 }
 
 .header__search-input {
-    width:150px;
+    width:120px;
     padding:6px;
     margin-right:-4px;
 
