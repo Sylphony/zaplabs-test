@@ -1,0 +1,34 @@
+.header {
+    border-bottom:1px solid #dfdfdf;
+}
+
+.header__nav {
+    
+}
+
+.header__nav-links {
+    padding:15px 0;
+}
+
+.header__nav-link {
+    display:inline-block;
+    vertical-align:middle;
+
+    margin-left:5px;
+    margin-right:25px;
+}
+
+.header__nav-link a {
+    display:block;
+
+    color:#000;
+}
+
+.header__nav-link a::after {
+    content:"￬";
+
+    margin-left:3px;
+
+    color:#c0c0c0;
+    font-size:1.2rem;
+}
