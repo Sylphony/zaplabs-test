@@ -87,11 +87,11 @@
 
 .content__box-info-item--topics__title::after,
 .content__box-info-item--author::after {
-    content:"￫";
+    content:"\2192";
 
     display:inline-block;
 
-    margin-left:3px;
+    margin-left:5px;
 
     color:#c0c0c0;
     font-size:1.5rem;

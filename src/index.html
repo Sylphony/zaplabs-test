@@ -4,6 +4,8 @@
         <title>ZapLabs Take Home Test</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
+
+        <!-- Linking all these stylesheets is only necessary since no preprocessor or compiler can be used. -->
         <link rel="stylesheet" type="text/css" href="css/base/base.css">
         <link rel="stylesheet" type="text/css" href="css/base/reset.css">
         <link rel="stylesheet" type="text/css" href="css/utils/support.css">
@@ -21,6 +23,13 @@
                 </form>
 
                 <nav class="header__nav">
+                    <input id="header__nav-toggle-checkbox" class="header__nav-toggle-checkbox" type="checkbox">
+                    <label class="header__nav-toggle-btn" for="header__nav-toggle-checkbox">
+                        <span class="header__nav-toggle-btn-bar"></span>
+                        <span class="header__nav-toggle-btn-bar"></span>
+                        <span class="header__nav-toggle-btn-bar"></span>
+                    </label>
+
                     <ul class="header__nav-menu reset-list">
                         <li class="header__nav-item">
                             <a class="header__nav-link" href="#">Web Design</a>
@@ -47,13 +56,13 @@
                                     <a class="header__nav-sublink" href="#">Illustrator</a>
                                 </li>
                                 <li class="header__nav-subitem">
-                                    <a class="header__nav-sublink" href="#">Icon Design</a>
+                                    <a class="header__nav-sublink" href="#">Photoshop</a>
                                 </li>
                                 <li class="header__nav-subitem">
-                                    <a class="header__nav-sublink" href="#">Icon Design</a>
+                                    <a class="header__nav-sublink" href="#">Typography</a>
                                 </li>
                                 <li class="header__nav-subitem">
-                                    <a class="header__nav-sublink" href="#">Icon Design</a>
+                                    <a class="header__nav-sublink" href="#">Vector Resources</a>
                                 </li>
                                 <li class="header__nav-subitem">
                                     <a class="header__nav-sublink" href="#">Graphic Design Archive</a>

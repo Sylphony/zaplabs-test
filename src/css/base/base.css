@@ -16,6 +16,7 @@ body {
     padding-right:30px;
 
     border:1px solid #dfdfdf;
+    -webkit-border-radius:3px;
     border-radius:3px;
 
     background-color:#FFF;

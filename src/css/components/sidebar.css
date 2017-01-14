@@ -6,6 +6,7 @@
 }
 
 @media (min-width:992px) {
+    /* Only show the sidebar for >992px. */
     .sidebar {
         display:block;
     }
